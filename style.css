@@ -61,7 +61,7 @@ main{
   display: flex;
 }
 
-#formContainer{
+.formContainer{
   display: flex;
   justify-content: center;
   align-self: center;
@@ -101,7 +101,8 @@ label{
   display: flex;
   justify-content: space-between;
 }
-form button{
+form button, 
+.thanksPage button{
   background-color: hsl(278, 68%, 11%)  ;
   color: white;
   padding: .7rem;
@@ -109,6 +110,25 @@ form button{
   border: none;
   border-radius: .5rem;
   width: 19rem;
+}
+.thanksPage{
+  display: flex;
+  flex-flow: column nowrap;
+  max-height: 100%;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+.thanksPage img{
+  height: 4rem;
+  width: 4rem;
+}
+.thanksPage h1{
+  margin: 1rem 0;
+  font-weight: 500;
+}
+.thanksPage p{
+  color: hsl(279, 6%, 55%);
 }
 
 #sideBar{
@@ -291,6 +311,10 @@ article p{
   }
   #horizontalInput{
     width: 16rem;
+  }
+  .thanksPage{
+    margin: 6rem 0;
+    width: 100%;
   }
 }
 

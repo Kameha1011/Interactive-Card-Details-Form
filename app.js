@@ -53,6 +53,8 @@ const isAllNumber = value =>{
         p.className = 'warning';
         value.after(p);
         value.className = 'inputWarning';
+   }else{
+    return true;
    }
 }
 
@@ -64,6 +66,8 @@ const blank = value =>{
         p.className = 'warning';
         value.after(p);
         value.className = 'inputWarning';
+    }else{
+        return true;
     }
 }
 
@@ -77,17 +81,33 @@ const hide = () =>{
 }
 
 // submit listener
+const formContainer = document.querySelector('.formContainer');
+const thanksPage = document.querySelector('.thanksPage');
 form.addEventListener('submit', e => {
     e.preventDefault();
     hide();
-    blank(cardNameForm);
-    blank(cardNumberForm);
-    blank(cardYearForm);
-    blank(cardMonthForm);
-    blank(cvcForm);
-    isAllNumber(cardMonthForm);
-    isAllNumber(cardYearForm);
-    isAllNumber(cvcForm);
+    if ((blank(cardNameForm) && blank(cardNumberForm) && blank(cardYearForm) && blank(cardMonthForm) && blank(cvcForm) && isAllNumber(cardMonthForm) && isAllNumber(cardYearForm) && isAllNumber(cvcForm))){
+        formContainer.classList.add('remove');
+        thanksPage.classList.remove('remove');
+    }else{
+        blank(cardNameForm);
+        blank(cardNumberForm);
+        blank(cardYearForm);
+        blank(cardMonthForm);
+        blank(cvcForm);
+        isAllNumber(cardMonthForm);
+        isAllNumber(cardYearForm);
+        isAllNumber(cvcForm);
+    }
+})
+
+// return to form
+
+const thanksButton = document.querySelector('#thanksButton');
+thanksButton.addEventListener('click', e => {
+    e.preventDefault();
+    formContainer.classList.remove('remove');
+    thanksPage.classList.add('remove');
 })
 
 
