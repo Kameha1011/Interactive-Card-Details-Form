@@ -211,9 +211,7 @@ article p{
   }
 }
 @media (max-width: 375px){
-  body,html{
-  height: 100%;
-  }
+
   img{
     max-width: none;
     display: inline;
@@ -238,7 +236,7 @@ article p{
   }
   #bgCardFront{
     position: absolute;
-    top: 9rem;
+    top: 11rem;
     left: 1rem;
   }
     #bgCardBack {
@@ -248,34 +246,43 @@ article p{
     position: absolute;
     top: -1rem;
     left: 0;
-    width: 103%;
+    width: 100%;
+  }
+  article p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
   }
   #cardNumberImg {
-    top: 14.5rem;
+    width: 17rem;
+    top: 15.5rem;
     left: 1.5rem;
   }
   #cardNameImg {
-    top: 16.4rem;
-    right: 15rem;
+    top: 15.5rem;
+    left: 2rem;
   
   }
   #cardExpDateImg {
-    top: 14.5rem;
+    top: 15.5rem;
+    left: 7rem;
   }
-  #cvcImg{
+  #cvcImg {
     left: 19rem;
-  }
+    bottom: 6.5rem;
+}
   #formContainer{
     
     width: 22rem;
     align-self: flex-start;
-    margin:2rem 0 0 1rem;
+    margin:5rem 0 0 1rem;
   }
   form{
     width: 100%;
   }
   form button{
-    margin-top: 1rem;
+    font-size: 1rem;
+    margin-top: 3rem;
     width: 100%;
   }
   input{

@@ -13,7 +13,7 @@ const cardNameImg = document.querySelector('#cardNameImg');
 const cardExpDateImg = document.querySelector('#cardExpDateImg');
 const cvcImg = document.querySelector('#cvcImg');
 
-// card format
+// card format (this one has a problem while deleting characters from the input)
 // const cardFormat = value =>{
 //    if(value.value.length === 4){
 //     cardNumberForm.value += ' ';
@@ -30,14 +30,14 @@ const cvcImg = document.querySelector('#cvcImg');
 //     }
 //     value.value = arr.join('');
 // }
+
+//card format using Cleavejs
 var cleave = new Cleave(cardNumberForm, {
     creditCard: true,
 });
+
 //live update form
 form.addEventListener('input', e => {
-    //formating card input
-    // cardFormat(cardNumberForm);
-    //actual live update
     cardNameImg.innerHTML = cardNameForm.value;
     cardNumberImg.innerHTML = cardNumberForm.value;
     cardExpDateImg.innerHTML = `${cardMonthForm.value}/${cardYearForm.value}`;
@@ -45,7 +45,7 @@ form.addEventListener('input', e => {
 });
 
 
-
+// isNumber check
 const isAllNumber = value =>{
    if(!/^\d+$/.test(value.value) && value.value != ''){
         const p = document.createElement('p');
@@ -55,6 +55,8 @@ const isAllNumber = value =>{
         value.className = 'inputWarning';
    }
 }
+
+// isBlank check
 const blank = value =>{
     if(value.value === ''){
         const p = document.createElement('p');
@@ -65,6 +67,7 @@ const blank = value =>{
     }
 }
 
+// hides previous error messages 
 const hide = () =>{
     const warning = document.querySelectorAll('.warning');
     for (let i = 0; i < warning.length; i++) {
@@ -72,6 +75,8 @@ const hide = () =>{
         element.className = 'remove';
     }
 }
+
+// submit listener
 form.addEventListener('submit', e => {
     e.preventDefault();
     hide();
