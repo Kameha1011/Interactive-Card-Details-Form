@@ -1,0 +1,290 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+.attribution{
+    display: none;
+}
+main{
+  display: flex;
+}
+
+#formContainer{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 70%;
+  font-size: .7rem;
+}
+form{
+  display: flex;
+  flex-flow: column wrap;
+  width: 30%;
+  height: 100%;
+}
+input{
+  font-size: 1rem;
+  height: 2rem;
+  width: 19rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: .5rem;
+}
+input:focus-visible{
+  border: 1px solid hsl(278, 68%, 11%);
+  outline: none;
+}
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: hsl(279, 6%, 55%);
+  opacity: 1; /* Firefox */
+}
+label{
+  margin-top: 2rem;
+}
+#horizontalInput input{
+   width: 5rem;
+}
+#horizontalInput{
+  width: 16rem;
+  display: flex;
+  justify-content: space-between;
+}
+form button{
+  background-color: hsl(278, 68%, 11%)  ;
+  color: white;
+  padding: .7rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  width: 19rem;
+}
+
+#sideBar{
+  height: 100vh;
+  width: 30%;
+}
+article{
+  color: white;
+  position: relative;
+  top: -48rem;
+  left: 5rem;
+  height: 68%;
+  width: 134%;
+}
+#bgCardBack{
+  margin: 3rem 0 0 6rem;
+}
+.interactiveCards{
+  height: 16rem;
+  width: 30rem;
+}
+article p{
+  position: relative;
+  z-index: 1;
+}
+#cardNumberImg{
+  height: 3rem;
+  width: 23rem;
+  top: 16rem;
+  left: 3rem;
+  font-size: 2rem;
+}
+#cardNameImg{
+  height: 1.5rem;
+  width: 9rem;
+  top: 16.5rem;
+  left: 3rem;
+}
+#cardExpDateImg{
+  height: 1.5rem;
+  top: 14.9rem;
+  left: 25rem;
+}
+#cvcImg{
+  height: 1.5rem;
+  bottom: 9rem;
+  left: 29.5rem;
+}
+#topBarImg{
+  display: none;
+}
+.inputWarning{
+  border-color: red;
+}
+.warning{
+  color: red;
+}
+.remove{
+  display: none;
+}
+@media (max-width: 1024px){
+  #horizontalInput{
+    height: 6rem;
+  }
+  form button {
+    margin-top: 0;
+  }
+  article{
+    top:-36rem;
+    height: 75%;
+  }
+  .interactiveCards {
+    height: 11rem;
+    width: 19rem;
+  }
+  #bgCardBack {
+    margin: 1rem 0 0 6rem;
+  }
+  #cardNumberImg {
+    top: 10.5rem;
+    left: 1rem;
+    font-size: 1.5rem;
+}
+
+  #cardNameImg {
+    top: 11.5rem;
+    left: 1rem;
+    font-weight: 100;
+    font-size: 0.7rem;
+  }
+  #cardExpDateImg {
+    top: 10.5rem;
+    left: 16rem;
+    font-size: .7rem;
+  }
+  #cvcImg {
+    bottom: 6.5rem;
+    left: 20.5rem;
+    font-size: .9rem;
+  }
+}
+@media (max-width: 375px){
+  body,html{
+  height: 100%;
+  }
+  img{
+    max-width: none;
+    display: inline;
+  }
+  #sideBarImg{
+    display: none;
+  }
+  main{
+    flex-direction: column;
+  }
+  #sideBar{
+    height: 15rem;
+    width: 90%;
+  }
+  #topBarImg{
+    display: block;
+    width: 111%;
+  }
+  .interactiveCards {
+    height: 10rem;
+    width: 18rem;
+  }
+  #bgCardFront{
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+  }
+    #bgCardBack {
+      margin: -1rem 0 0 5rem;
+  }
+  article {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    width: 103%;
+  }
+  #cardNumberImg {
+    top: 14.5rem;
+    left: 1.5rem;
+  }
+  #cardNameImg {
+    top: 16.4rem;
+    right: 15rem;
+  
+  }
+  #cardExpDateImg {
+    top: 14.5rem;
+  }
+  #cvcImg{
+    left: 19rem;
+  }
+  #formContainer{
+    
+    width: 22rem;
+    align-self: flex-start;
+    margin:2rem 0 0 1rem;
+  }
+  form{
+    width: 100%;
+  }
+  form button{
+    margin-top: 1rem;
+    width: 100%;
+  }
+  input{
+    width: 20rem;
+    height: 3rem;
+  }
+  #horizontalInput{
+    width: 16rem;
+  }
+}
+
+

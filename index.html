@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <!-- custom style -->
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <main>
+    <section id="sideBar">
+      <img src="./images/bg-main-desktop.png" alt="side background image" id="sideBarImg">
+      <img src="./images/bg-main-mobile.png" alt="top background image" id="topBarImg">
+      <article>
+        <p id="cardNumberImg">0000 0000 0000 0000</p>
+        <p id="cardNameImg">JANE APPLESEED</p>
+        <p id="cardExpDateImg">00/00</p>
+        <img src="./images/bg-card-front.png" alt="interactive card front" class="interactiveCards" id="bgCardFront">
+        <img src="./images/bg-card-back.png" id="bgCardBack"alt="interactive card back" class="interactiveCards">
+        <p id="cvcImg">000</p>
+      </article>
+      
+    </section>
+    <section id="formContainer">
+      <form action="#" id="form">
+        <label for="name">
+          CARDHOLDER NAME
+        </label>
+        <input type="text" name="name" id="cardNameForm" placeholder="e.g. JANE APPLESEED" maxlength="18">
+        <label for="number">
+          CARD NUMBER
+        </label>
+        <input type="text" id="cardNumberForm" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+        
+        <div id="horizontalInput">
+          <label >
+            EXP. DATE (MM/YY)
+            <input  type="text" placeholder="MM" id="cardMonthForm" name="expDate" maxlength="2" minlength="2">
+            <input  type="text" placeholder="YY" id="cardYearForm" name="expDate" maxlength="2" minlength="2">
+            
+          </label>
+          
+          <label for="cvc" >
+            CVC
+            <input type="text" name="cvc" id="cvcForm" placeholder=" e.g. 123" maxlength="3" minlength="3">
+            
+          </label>
+          
+        </div>
+        
+       
+        <label>
+          <button type="submit">Confirm</button>
+        </label>
+      </form>
+    </section>
+  </main>
+  <!-- Completed state start -->  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  
+  <!-- credit card format library -->
+  <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
