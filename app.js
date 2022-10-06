@@ -108,6 +108,11 @@ thanksButton.addEventListener('click', e => {
     e.preventDefault();
     formContainer.classList.remove('remove');
     thanksPage.classList.add('remove');
+    cardNameForm.value = '';
+    cardNumberForm.value = '';
+    cardMonthForm.value = '';
+    cardYearForm.value = '';
+    cvcForm.value = '';
 })
 
 
