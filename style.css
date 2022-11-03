@@ -230,7 +230,7 @@ article p{
     font-size: .9rem;
   }
 }
-@media (max-width: 375px){
+@media (max-width: 425px){
 
   img{
     max-width: none;
